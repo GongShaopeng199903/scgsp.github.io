@@ -4,24 +4,24 @@
 <head><meta name="generator" content="Hexo 3.8.0">
   <meta charset="UTF-8">
   
-    <title>测试 | GDD个人博客</title>
+    <title>数据库范式 | GDD个人博客</title>
     <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
     
     <meta name="author" content="GDD">
     
 
     
-    <meta name="description" content="第一次用hexo+github:     一些基本指令:hexo g --生成静态文件              hexo d --将之前生成的文件部署到网站上">
+    <meta name="description" content="数据库范式要求 ： - 一范式：字段属性都是单一属性（二维表） - 二范式：副属性没有完全依赖与主属性造成一对多的情况（组合关键字）     造成后果：         #插入异常         #删除异常         #更新异常         #数据冗余 - 三范式：不存在传递函数（如：同时存在商品、分类、分类描述）     造成后果：         #插入异常         #删除">
 <meta property="og:type" content="article">
-<meta property="og:title" content="测试">
-<meta property="og:url" content="http://yoursite.com/2018/11/05/测试/index.html">
+<meta property="og:title" content="数据库范式">
+<meta property="og:url" content="http://yoursite.com/2018/11/06/数据库范式/index.html">
 <meta property="og:site_name" content="GDD个人博客">
-<meta property="og:description" content="第一次用hexo+github:     一些基本指令:hexo g --生成静态文件              hexo d --将之前生成的文件部署到网站上">
+<meta property="og:description" content="数据库范式要求 ： - 一范式：字段属性都是单一属性（二维表） - 二范式：副属性没有完全依赖与主属性造成一对多的情况（组合关键字）     造成后果：         #插入异常         #删除异常         #更新异常         #数据冗余 - 三范式：不存在传递函数（如：同时存在商品、分类、分类描述）     造成后果：         #插入异常         #删除">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-11-05T15:18:48.219Z">
+<meta property="og:updated_time" content="2018-11-06T14:08:12.348Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="测试">
-<meta name="twitter:description" content="第一次用hexo+github:     一些基本指令:hexo g --生成静态文件              hexo d --将之前生成的文件部署到网站上">
+<meta name="twitter:title" content="数据库范式">
+<meta name="twitter:description" content="数据库范式要求 ： - 一范式：字段属性都是单一属性（二维表） - 二范式：副属性没有完全依赖与主属性造成一对多的情况（组合关键字）     造成后果：         #插入异常         #删除异常         #更新异常         #数据冗余 - 三范式：不存在传递函数（如：同时存在商品、分类、分类描述）     造成后果：         #插入异常         #删除">
 
     
     <link rel="alternative" href="/atom.xml" title="GDD个人博客" type="application/atom+xml">
@@ -81,14 +81,14 @@
 		<header class="article-info clearfix">
   <h1 itemprop="name">
     
-      <a href="/2018/11/05/测试/" title="测试" itemprop="url">测试</a>
+      <a href="/2018/11/06/数据库范式/" title="数据库范式" itemprop="url">数据库范式</a>
   </h1>
   <p class="article-author">By
        
 		<a href="/about" title="GDD" target="_blank" itemprop="author">GDD</a>
 		
   </p><p class="article-time">
-    <time datetime="2018-11-05T15:11:26.000Z" itemprop="datePublished"> 发表于 2018-11-05</time>
+    <time datetime="2018-11-06T14:08:12.000Z" itemprop="datePublished"> 发表于 2018-11-06</time>
     
   </p>
 </header>
@@ -101,10 +101,22 @@
 		
 		</div>
 		
-		<pre><code>第一次用hexo+github:
-    一些基本指令:hexo g --生成静态文件
-             hexo d --将之前生成的文件部署到网站上
-</code></pre>  
+		<pre><code>数据库范式要求 ：
+- 一范式：字段属性都是单一属性（二维表）
+- 二范式：副属性没有完全依赖与主属性造成一对多的情况（组合关键字）
+    造成后果：
+        #插入异常
+        #删除异常
+        #更新异常
+        #数据冗余
+- 三范式：不存在传递函数（如：同时存在商品、分类、分类描述）
+    造成后果：
+        #插入异常
+        #删除异常
+        #更新异常
+        #数据冗余
+</code></pre><p>商品id    商品名    价格    库存    商品类别id<br>主键                外键</p>
+  
 	</div>
 		<footer class="article-footer clearfix">
 <div class="article-catetags">
@@ -116,7 +128,7 @@
 
 	<div class="article-share" id="share">
 	
-	  <div data-url="http://yoursite.com/2018/11/05/测试/" data-title="测试 | GDD个人博客" data-tsina="" class="share clearfix">
+	  <div data-url="http://yoursite.com/2018/11/06/数据库范式/" data-title="数据库范式 | GDD个人博客" data-tsina="" class="share clearfix">
 	  </div>
 	
 	</div>
@@ -129,19 +141,11 @@
 	
 <nav class="article-nav clearfix">
  
- <div class="prev">
- <a href="/2018/11/06/数据库范式/" title="数据库范式">
-  <strong>上一篇：</strong><br>
-  <span>
-  数据库范式</span>
-</a>
-</div>
-
 
 <div class="next">
-<a href="/2018/11/05/hello-world/" title="Hello World">
+<a href="/2018/11/05/测试/" title="测试">
  <strong>下一篇：</strong><br> 
- <span>Hello World
+ <span>测试
 </span>
 </a>
 </div>
