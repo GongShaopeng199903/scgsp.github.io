@@ -79,6 +79,96 @@
         <header class="article-info clearfix">
   <h1 itemprop="name">
     
+      <a href="/2018/11/09/String类基础/" title="String类基础" itemprop="url">String类基础</a>
+  </h1>
+  <p class="article-author">By
+       
+		<a href="/about" title="GDD" target="_blank" itemprop="author">GDD</a>
+		
+  </p><p class="article-time">
+    <time datetime="2018-11-08T16:05:01.000Z" itemprop="datePublished"> 发表于 2018-11-09</time>
+    
+  </p>
+</header>
+    <div class="article-content">
+        
+        <h3 id="一、String字符串的创建方式"><a href="#一、String字符串的创建方式" class="headerlink" title="一、String字符串的创建方式"></a>一、String字符串的创建方式</h3><h4 id="1、直接赋值："><a href="#1、直接赋值：" class="headerlink" title="1、直接赋值："></a>1、直接赋值：</h4><p>​    <code>String str = &quot;字符串&quot;;</code></p>
+<h4 id="2、也可以用构造方法："><a href="#2、也可以用构造方法：" class="headerlink" title="2、也可以用构造方法："></a>2、也可以用构造方法：</h4><p>​    <code>String str = new String()</code></p>
+<h3 id="二、字符串拼接"><a href="#二、字符串拼接" class="headerlink" title="二、字符串拼接"></a>二、字符串拼接</h3><p>  字符串可以用“+”号拼接：</p>
+<p>​        <code>String str = &quot;字符串1&quot; + &quot;字符串2&quot;</code></p>
+<p>​    但要注意：这是创建了一个新的字符串，并不是真正意义上的相加，</p>
+<p>  原来的“字符串1”的存储空间还在，详情查看关于内存分析的博客。</p>
+<p>  所以一般使用StringBuffer或StringBuilder，关于这两个类也在其它博客。</p>
+<h3 id="三、String的一些基本方法"><a href="#三、String的一些基本方法" class="headerlink" title="三、String的一些基本方法"></a>三、String的一些基本方法</h3><h4 id="1、charAt-int-index-——返回指定索引处的-char-值："><a href="#1、charAt-int-index-——返回指定索引处的-char-值：" class="headerlink" title="1、charAt(int index)——返回指定索引处的 char 值："></a>1、charAt(int index)——返回指定索引处的 char 值：</h4><p>  如以下代码将返回“o”</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">String str = <span class="string">"Hello"</span>;</span><br><span class="line">System.out.print(str.charAt(<span class="number">4</span>));</span><br></pre></td></tr></table></figure>
+<h4 id="2、equals-Object-anObject-——将此字符串与指定的对象比较"><a href="#2、equals-Object-anObject-——将此字符串与指定的对象比较" class="headerlink" title="2、equals(Object anObject)——将此字符串与指定的对象比较:"></a>2、equals(Object anObject)——将此字符串与指定的对象比较:</h4><p>  这是用于字符串之间进行比较的方法，若两字符串相等返回true否则返回false</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">String a = <span class="keyword">new</span> String(<span class="string">"xxx"</span>);</span><br><span class="line">String b = <span class="keyword">new</span> String(<span class="string">"xxx"</span>);</span><br><span class="line">String c = <span class="keyword">new</span> String(<span class="string">"yyy"</span>);</span><br><span class="line">a.equals(b)		<span class="comment">//返回true</span></span><br><span class="line">a.equals(c)		<span class="comment">//返回false</span></span><br></pre></td></tr></table></figure>
+<p>  注意不能使用“==”进行比较，这将比较它们的地址，不会比较内容：</p>
+<p>​    <code>a == b ; //返回false</code></p>
+<h4 id="3、getBytes-——将此-String-编码为-byte-序列，并将结果存储到一个新的-byte-数组中："><a href="#3、getBytes-——将此-String-编码为-byte-序列，并将结果存储到一个新的-byte-数组中：" class="headerlink" title="3、getBytes()——将此 String 编码为 byte 序列，并将结果存储到一个新的 byte 数组中："></a>3、getBytes()——将此 String 编码为 byte 序列，并将结果存储到一个新的 byte 数组中：</h4><p>  一般可以用于ASCII码的比较，如以下代码返回了“x”的ASCII码120：</p>
+<p>​    <code>x.getBytes() //返回120</code></p>
+<h4 id="4、isEmpty-——当且仅当-length-为-0-时返回-true："><a href="#4、isEmpty-——当且仅当-length-为-0-时返回-true：" class="headerlink" title="4、isEmpty()——当且仅当 length() 为 0 时返回 true："></a>4、isEmpty()——当且仅当 length() 为 0 时返回 true：</h4><p>  用于判断获取到的字符串是否为空时可以用的到：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">String str = <span class="string">""</span>;</span><br><span class="line"><span class="keyword">if</span>(str == <span class="keyword">null</span> || str.isEmpty())&#123;</span><br><span class="line">    System.out.print(<span class="string">"空值"</span>)</span><br><span class="line">&#125;<span class="keyword">else</span>&#123;</span><br><span class="line">    System.out.print(<span class="string">"不为空"</span>)</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//结果输出空值</span></span><br></pre></td></tr></table></figure>
+<h4 id="5、length-："><a href="#5、length-：" class="headerlink" title="5、length() ："></a>5、length() ：</h4><p>  返回此字符串的长度。</p>
+<h4 id="6、matches-String-regex-："><a href="#6、matches-String-regex-：" class="headerlink" title="6、matches(String regex)："></a>6、matches(String regex)：</h4><p>  告知此字符串是否匹配给定的正则表达式，当匹配时返回true。</p>
+<h4 id="7、split-String-regex-——根据给定正则表达式的匹配拆分此字符串。"><a href="#7、split-String-regex-——根据给定正则表达式的匹配拆分此字符串。" class="headerlink" title="7、split(String regex) ——根据给定正则表达式的匹配拆分此字符串。"></a>7、split(String regex) ——根据给定正则表达式的匹配拆分此字符串。</h4><p>  regex是用于分割该字符串的字符，是被分割字符串的断点：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">String b = <span class="string">"xxx-FFF-SSS"</span>;</span><br><span class="line">String[] strs = b.split(<span class="string">"-"</span>);</span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; strs.length; i++) &#123;</span><br><span class="line">	System.out.println(strs[i]);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>  输出：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">xxx</span><br><span class="line">FFF</span><br><span class="line">SSS</span><br></pre></td></tr></table></figure>
+<h4 id="8、substring-int-beginIndex-和substring-int-beginIndex-int-endIndex-："><a href="#8、substring-int-beginIndex-和substring-int-beginIndex-int-endIndex-：" class="headerlink" title="8、substring(int beginIndex) 和substring(int beginIndex, int endIndex)："></a>8、substring(int beginIndex) 和substring(int beginIndex, int endIndex)：</h4><p>  这个方法返回一个新字符串，它是此字符串的一个子字符串，这个的索引取值范围是左闭有开区间,</p>
+<p>如substring(0,3)，所取到的值是0、1、2不包括3。</p>
+<p>substring(2),所取到的值是索引为2的字符到该字符串最后一个字符</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">String str = <span class="string">"Hello"</span>;</span><br><span class="line">str.substring(<span class="number">1</span>,<span class="number">4</span>);		<span class="comment">//取得值为“ell”</span></span><br><span class="line">str.substring(<span class="number">2</span>);		<span class="comment">//取得值为“llo”</span></span><br></pre></td></tr></table></figure>
+<h4 id="9、toCharArray"><a href="#9、toCharArray" class="headerlink" title="9、toCharArray()"></a>9、toCharArray()</h4><p>  将此字符串转换为一个新的字符数组。    </p>
+<h4 id="10、toLowerCase"><a href="#10、toLowerCase" class="headerlink" title="10、toLowerCase()"></a>10、toLowerCase()</h4><p>  使用默认语言环境的规则将此 String 中的所有字符都转换为小写。</p>
+<h4 id="11、toUpperCase"><a href="#11、toUpperCase" class="headerlink" title="11、toUpperCase()"></a>11、toUpperCase()</h4><p>  使用默认语言环境的规则将此 String 中的所有字符都转换为大写。</p>
+<h4 id="12、trim"><a href="#12、trim" class="headerlink" title="12、trim()"></a>12、trim()</h4><p>  返回字符串的副本，忽略前导空白和尾部空白。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">String f = <span class="string">"    3"</span>;</span><br><span class="line">String g = f.trim();</span><br><span class="line">System.out.println(f);</span><br><span class="line">System.out.println(g);</span><br></pre></td></tr></table></figure>
+<p>  输出结果：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">    <span class="number">3</span></span><br><span class="line"><span class="number">3</span></span><br></pre></td></tr></table></figure>
+<h4 id="13、valueOf"><a href="#13、valueOf" class="headerlink" title="13、valueOf()"></a>13、valueOf()</h4><p>  String类的静态方法,可以将其它类型的变量转化为String类型：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> a = <span class="number">1919</span>;</span><br><span class="line">String b = String.valueOf(a);</span><br></pre></td></tr></table></figure>
+
+        
+        
+        <p class="article-more-link">
+          
+       </p>
+    </div>
+    <footer class="article-footer clearfix">
+<div class="article-catetags">
+
+
+  <div class="article-tags">
+  
+  <span></span> <a href="/tags/Java基础/">Java基础</a>
+  </div>
+
+</div>
+
+
+
+
+<div class="comments-count">
+	
+</div>
+
+</footer>
+
+
+    </article>
+
+
+
+
+
+
+   
+    
+    <article class="post-expand post" itemprop="articleBody"> 
+        <header class="article-info clearfix">
+  <h1 itemprop="name">
+    
       <a href="/2018/11/07/jsp-useBean的基本使用方法/" title="jsp:useBean的基本使用方法" itemprop="url">jsp:useBean的基本使用方法</a>
   </h1>
   <p class="article-author">By
@@ -336,6 +426,10 @@
 <div class="tagslist">
 	<p class="asidetitle">标签</p>
 		<ul class="clearfix">
+		
+			
+				<li><a href="/tags/Java基础/" title="Java基础">Java基础<sup>1</sup></a></li>
+			
 		
 			
 				<li><a href="/tags/JavaWeb基础/" title="JavaWeb基础">JavaWeb基础<sup>1</sup></a></li>
